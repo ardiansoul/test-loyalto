@@ -1,10 +1,10 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Home } from '../pages'
+import AuthRoute from './AuthRoute'
+import { routes } from './routes'
 const AppRouter = () => {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            {routes.map((route, index) => <Route key={index} {...route} element={<AuthRoute {...route} />} />)}
         </Routes>
     )
 }
